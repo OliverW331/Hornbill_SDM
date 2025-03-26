@@ -1,0 +1,142 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNBBDrwc2I1lXNha65yfroP",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "ir",
+      "display_name": "R"
+    },
+    "language_info": {
+      "name": "R"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/OliverW331/Hornbill_SDM/blob/main/hornbill_sdm.Rmd\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# prompt: give an example of using R\n",
+        "\n",
+        "library(tidyverse)\n",
+        "# Create a tibble (a modern data frame)\n",
+        "my_data <- tibble(\n",
+        "  name = c(\"Alice\", \"Bob\", \"Charlie\"),\n",
+        "  age = c(25, 30, 28),\n",
+        "  city = c(\"New York\", \"Los Angeles\", \"Chicago\")\n",
+        ")\n",
+        "\n",
+        "# Print the data frame\n",
+        "print(my_data)\n",
+        "\n",
+        "# Calculate the average age\n",
+        "average_age <- mean(my_data$age)\n",
+        "print(average_age)\n",
+        "\n",
+        "# Filter the data frame to include only people older than 28\n",
+        "older_than_28 <- my_data %>%\n",
+        "  filter(age > 28)\n",
+        "\n",
+        "print(older_than_28)\n",
+        "\n",
+        "# Arrange the data frame by age in descending order\n",
+        "sorted_by_age <- my_data %>%\n",
+        "  arrange(desc(age))\n",
+        "sorted_by_age\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 557
+        },
+        "id": "fCG7f2Rhuzt9",
+        "outputId": "5808a70f-b56d-4343-b705-e0c0ad07b041"
+      },
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stderr",
+          "text": [
+            "── \u001b[1mAttaching core tidyverse packages\u001b[22m ──────────────────────── tidyverse 2.0.0 ──\n",
+            "\u001b[32m✔\u001b[39m \u001b[34mdplyr    \u001b[39m 1.1.4     \u001b[32m✔\u001b[39m \u001b[34mreadr    \u001b[39m 2.1.5\n",
+            "\u001b[32m✔\u001b[39m \u001b[34mforcats  \u001b[39m 1.0.0     \u001b[32m✔\u001b[39m \u001b[34mstringr  \u001b[39m 1.5.1\n",
+            "\u001b[32m✔\u001b[39m \u001b[34mggplot2  \u001b[39m 3.5.1     \u001b[32m✔\u001b[39m \u001b[34mtibble   \u001b[39m 3.2.1\n",
+            "\u001b[32m✔\u001b[39m \u001b[34mlubridate\u001b[39m 1.9.4     \u001b[32m✔\u001b[39m \u001b[34mtidyr    \u001b[39m 1.3.1\n",
+            "\u001b[32m✔\u001b[39m \u001b[34mpurrr    \u001b[39m 1.0.4     \n",
+            "── \u001b[1mConflicts\u001b[22m ────────────────────────────────────────── tidyverse_conflicts() ──\n",
+            "\u001b[31m✖\u001b[39m \u001b[34mdplyr\u001b[39m::\u001b[32mfilter()\u001b[39m masks \u001b[34mstats\u001b[39m::filter()\n",
+            "\u001b[31m✖\u001b[39m \u001b[34mdplyr\u001b[39m::\u001b[32mlag()\u001b[39m    masks \u001b[34mstats\u001b[39m::lag()\n",
+            "\u001b[36mℹ\u001b[39m Use the conflicted package (\u001b[3m\u001b[34m<http://conflicted.r-lib.org/>\u001b[39m\u001b[23m) to force all conflicts to become errors\n"
+          ]
+        },
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\u001b[90m# A tibble: 3 × 3\u001b[39m\n",
+            "  name      age city       \n",
+            "  \u001b[3m\u001b[90m<chr>\u001b[39m\u001b[23m   \u001b[3m\u001b[90m<dbl>\u001b[39m\u001b[23m \u001b[3m\u001b[90m<chr>\u001b[39m\u001b[23m      \n",
+            "\u001b[90m1\u001b[39m Alice      25 New York   \n",
+            "\u001b[90m2\u001b[39m Bob        30 Los Angeles\n",
+            "\u001b[90m3\u001b[39m Charlie    28 Chicago    \n",
+            "[1] 27.66667\n",
+            "\u001b[90m# A tibble: 1 × 3\u001b[39m\n",
+            "  name    age city       \n",
+            "  \u001b[3m\u001b[90m<chr>\u001b[39m\u001b[23m \u001b[3m\u001b[90m<dbl>\u001b[39m\u001b[23m \u001b[3m\u001b[90m<chr>\u001b[39m\u001b[23m      \n",
+            "\u001b[90m1\u001b[39m Bob      30 Los Angeles\n"
+          ]
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/html": [
+              "<table class=\"dataframe\">\n",
+              "<caption>A tibble: 3 × 3</caption>\n",
+              "<thead>\n",
+              "\t<tr><th scope=col>name</th><th scope=col>age</th><th scope=col>city</th></tr>\n",
+              "\t<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th></tr>\n",
+              "</thead>\n",
+              "<tbody>\n",
+              "\t<tr><td>Bob    </td><td>30</td><td>Los Angeles</td></tr>\n",
+              "\t<tr><td>Charlie</td><td>28</td><td>Chicago    </td></tr>\n",
+              "\t<tr><td>Alice  </td><td>25</td><td>New York   </td></tr>\n",
+              "</tbody>\n",
+              "</table>\n"
+            ],
+            "text/markdown": "\nA tibble: 3 × 3\n\n| name &lt;chr&gt; | age &lt;dbl&gt; | city &lt;chr&gt; |\n|---|---|---|\n| Bob     | 30 | Los Angeles |\n| Charlie | 28 | Chicago     |\n| Alice   | 25 | New York    |\n\n",
+            "text/latex": "A tibble: 3 × 3\n\\begin{tabular}{lll}\n name & age & city\\\\\n <chr> & <dbl> & <chr>\\\\\n\\hline\n\t Bob     & 30 & Los Angeles\\\\\n\t Charlie & 28 & Chicago    \\\\\n\t Alice   & 25 & New York   \\\\\n\\end{tabular}\n",
+            "text/plain": [
+              "  name    age city       \n",
+              "1 Bob     30  Los Angeles\n",
+              "2 Charlie 28  Chicago    \n",
+              "3 Alice   25  New York   "
+            ]
+          },
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [],
+      "metadata": {
+        "id": "OhHzmcjavwsx"
+      }
+    }
+  ]
+}
